@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-export default function Client() {
+export default function Client(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
+  const { params } = props;
+  console.log({ params });
   return (
     <div>
       <h1>Client Page</h1>
@@ -39,3 +44,11 @@ export default function Client() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = (context) => {
+  const { params } = context;
+
+  return {
+    props: { params },
+  };
+};
