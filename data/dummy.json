@@ -1,0 +1,8 @@
+{
+  "products": [
+    { "name": "Porfolio", "link": "portfolio" },
+    { "name": "Clients", "link": "clients" },
+    { "name": "About", "link": "about" },
+    { "name": "Blog", "link": "blog" }
+  ]
+}
