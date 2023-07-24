@@ -45,6 +45,13 @@ export default function Client(
   );
 }
 
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { id: "apple" } }],
+    fallback: true,
+  };
+}
+
 export const getStaticProps: GetStaticProps = (context) => {
   const { params } = context;
 

@@ -17,13 +17,19 @@ export default function ClientPage(
 }
 
 export async function getStaticPaths() {
+  const details = [
+    { id: "apple", name: "pollo" },
+    { id: "banana", name: "hermano" },
+    { id: "cherry", name: "boffo" },
+  ];
+
+  const paths = details.map(({ id, name }) => ({
+    params: { id, name },
+  }));
+
   return {
-    paths: [
-      { params: { id: "apple", name: "pollo" } },
-      { params: { id: "banana", name: "hermano" } },
-      { params: { id: "cherry", name: "boffo" } },
-    ],
-    fallback: false,
+    paths,
+    fallback: "blocking",
   };
 }
 
