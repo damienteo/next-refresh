@@ -6,6 +6,7 @@ export default function Client(
 ) {
   const { params } = props;
   console.log({ params });
+
   return (
     <div>
       <h1>Client Page</h1>
