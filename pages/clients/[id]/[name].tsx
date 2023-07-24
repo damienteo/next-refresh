@@ -8,6 +8,9 @@ export default function ClientPage(
   console.log({ params });
   const router = useRouter();
 
+  // More for when actual entry from db not found
+  if (!router.query.id) return { notFound: true };
+
   return (
     <div>
       <h1>Client Page {router.query.id}</h1>
